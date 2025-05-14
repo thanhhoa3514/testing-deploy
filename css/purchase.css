@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+    vertical-align: middle;
+}
+
+a,
+li,
+div {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+    color: #1c1f38;
+    text-decoration: none;
+}
+
+.header2 {
+    /* display: flex;
+    justify-content: space-between; */
+    align-items: center;
+    text-align: center;
+    padding: 30px 10%;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0;
+}
+
+.nav_links li a:hover {
+    color: #57575f;
+}
+
+.logo:hover {
+    color: #57575f;
+}
+
+.purchase:hover {
+    color: #57575f;
+}
+
+.contain {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+.section-header {
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.purchase-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.purchase-row {
+    display: flex;
+    margin-top: 2%;
+}
+
+.purchase-item {
+    width: 45%;
+}
+
+.purchase-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.purchase-quantity {
+    width: 15%;
+}
+
+.purchase-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.purchase-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* .purchase-receipt {
+    border-bottom: none;
+} */
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    padding: 7px;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.purchase-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+
+/* .purchase-row:last-child {
+    /* border-bottom: 1px solid black; */
+
+
+/* } */
+
+.purchase-receipt {
+    border-bottom: 1px solid black;
+}
+
+.purchase-row:last-child .purchase-column {
+    /* border: none; */
+}
+
+.purchase-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.purchase-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+}
+
+.pur-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+    padding: 7px;
+    border-radius: .3em;
+}
+
+section {
+    margin-top: 50px;
+}

@@ -1,0 +1,297 @@
+#regwrapper {
+    display: none;
+    position: fixed;
+    z-index: 98;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 10%;
+}
+
+#logwrapper {
+    display: none;
+    position: fixed;
+    z-index: 98;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 10%;
+}
+
+.regWindow {
+    position: relative;
+    margin: 0 auto;
+    border-radius: 16px;
+    width: 750px;
+    height: fit-content;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.4s;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.logWindow {
+    position: relative;
+    margin: 0 auto;
+    border-radius: 16px;
+    width: 600px;
+    height: fit-content;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.4s;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+#regtitle {
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+    text-transform: uppercase;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+#regtitle a {
+    text-decoration: none;
+    float: right;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 3px 7px;
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: 0.9% 5%;
+}
+
+#regtitle a:hover {
+    background-color: gray;
+}
+
+#regbox {
+    margin: 3% 0% 3% 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+}
+
+#logbox {
+    margin: 3% 0% 3% 0%;
+    width: 100%;
+    display: flex;
+    background-color: whitesmoke;
+    justify-content: center;
+}
+
+#regleft {
+    width: 45%;
+    padding: 12px 20px;
+}
+
+#regright {
+    width: 45%;
+    padding: 12px 20px;
+}
+
+#logright {
+    width: 80%;
+}
+
+#regbox input[type=text] {
+    width: 80%;
+    padding: 12px 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+    border: none;
+    border-bottom: rgb(28, 48, 107) 3px solid;
+    transition: width 0.2s ease-in-out;
+}
+
+#regbox input[type=password] {
+    width: 80%;
+    padding: 12px 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+    border: none;
+    border-bottom: rgb(28, 48, 107) 3px solid;
+    transition: width 0.2s ease-in-out;
+}
+
+#regbox input[type=password]:focus {
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.533);
+    border: none;
+    border-bottom: red 3px solid;
+}
+
+#regbox input[type=text]:focus,
+[type=password]:focus {
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.533);
+    border: none;
+    border-bottom: red 3px solid;
+}
+
+#logbox input[type=text],
+[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+    border: none;
+    border-bottom: rgb(28, 48, 107) 3px solid;
+    transition: 0.2s;
+}
+
+#logbox input[type=text]:focus,
+[type=password]:focus {
+    background-color: rgba(211, 211, 211, 0.533);
+    border: none;
+    border-bottom: red 3px solid;
+}
+
+#checkhoten,
+#checkuser,
+#checkpass,
+#checkconfirm {
+    color: red;
+    font-size: 15px;
+}
+
+#regbottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    margin-bottom: 3%;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logbottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    margin-bottom: 3%;
+    flex-direction: column;
+    align-items: center;
+}
+
+#regbottom input[type=button] {
+    padding: 12px 20px;
+    border-radius: 16px;
+    border: none;
+    background-color: burlywood;
+    transition: 0.3s;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#regbottom input[type=button]:hover {
+    color: white;
+    background-color: black;
+}
+
+#logbottom input[type=button] {
+    padding: 12px 20px;
+    border-radius: 16px;
+    border: none;
+    background-color: burlywood;
+    transition: 0.3s;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#logbottom input[type=button]:hover {
+    color: white;
+    background-color: black;
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #regwrapper {
+        padding-top: 3%;
+    }
+    .regWindow {
+        width: 50%;
+    }
+    #regbox {
+        flex-direction: column;
+    }
+    #regbox input[type=text] {
+        width: 100%;
+    }
+    #regbox input[type=password] {
+        width: 100%;
+    }
+    #regleft,
+    #regright {
+        padding: 0px 20px;
+    }
+    #regbottom {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    #logwrapper {
+        padding-top: 7%;
+    }
+    .logWindow {
+        width: 60%;
+    }
+    #logbox input[type=text],
+    [type=password] {
+        width: 100%;
+    }
+    #regleft,
+    #regright {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    #regwrapper {
+        padding-top: 6.5%;
+    }
+}

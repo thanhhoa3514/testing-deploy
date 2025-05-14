@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FOUR TEE COFFEE</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/logo2.png">
+    <script src="https://kit.fontawesome.com/1f286772f7.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/blog.css">
+    <link rel="stylesheet" href="./css/reg.css">
+    <script src="js/windowOnload.js "></script>
+    <script src="js/windowOnclick.js "></script>
+</head>
+
+<body>
+    <!--Headbar-->
+    <div class="head" id="navbar">
+        <a id="logo" href="#home">
+            <img src="./img/logo2.png" alt="logo" style="width: 45px; height: auto;">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" id="home" onclick="changeMenu(this);">Home</a></li>
+                <li><a href="#" id="clickproduct" onclick="changeMenu(this); xuatList('all'); menuTop();">Our Products</a></li>
+                <li><a href="#" onclick="changeMenu(document.getElementById('contact'));">Contact</a></li>
+                <li><a href="#" id="clickblog" onclick="changeMenu(this);">About Us</a></li>
+            </ul>
+        </nav>
+        <div id="topright">
+            <a href="#" id="statusLog" onclick="showLog(); createAdmin();">Login</a>
+        </div>
+    </div>
+
+    <a id="logo" href="#" onclick="showsidebar()">
+        <div id="topsidebar">
+            <img src="./img/logo2.png" alt="logo" style="width: 45px; height: auto;">
+        </div>
+    </a>
+
+    <div id="sidebarwrapper">
+        <div id="sidebar">
+            <ul>
+                <a href="#" id="logo" onclick="changeMenu(document.getElementById('home')); document.getElementById('sidebarwrapper').style.display='none';">
+                    <li>Home</li>
+                </a>
+                <a href="#" onclick="changeMenu(document.getElementById('clickproduct')); xuatList('all'); menuTop(); document.getElementById('sidebarwrapper').style.display='none';">
+                    <li>Our Products</li>
+                </a>
+                <a href="#" onclick="document.getElementById('sidebarwrapper').style.display='none';">
+                    <li>About</li>
+                </a>
+                <a href="#" onclick="changeMenu(document.getElementById('clickblog')); document.getElementById('sidebarwrapper').style.display='none';">
+                    <li>About Us</li>
+                </a>
+                <div id="barright">
+                    <a href="#" onclick="showLog(); createAdmin(); document.getElementById('sidebarwrapper').style.display='none';">
+                        <li>Login</li>
+                    </a>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div id="regwrapper">
+        <div class="regWindow">
+            <div id="regtitle">
+                <div style="margin-left: 45%;">Đăng ký</div>
+                <a href="javascript:closeregForm();">X</a>
+            </div>
+            <hr style="width: 90%;">
+            <div id="regbox">
+                <div id="regleft">
+                    <form name="inputInfo">
+                        <label>Họ và tên</label><label id="checkhoten"></label><br>
+                        <input type="text" id="hoten" placeholder="Nhập họ và tên..."><br>
+                        <label>Địa chỉ</label><br>
+                        <input type="text" id="diachi" placeholder="Nhập địa chỉ..."><br>
+                        <label>Số điện thoại</label><br>
+                        <input type="text" id="sodienthoai" placeholder="Số điện thoại của bạn" maxlength="10"><br>
+                    </form>
+                </div>
+                <div id="regright">
+                    <form name="inputAccount">
+                        <label>Tên đăng nhập</label><label id="checkuser"></label><br>
+                        <input type="text" id="txtusername" placeholder="Username"><br>
+                        <label>Mật khẩu</label><label id="checkpass"></label><br>
+                        <input type="password" id="txtpassword" placeholder="Trong khoảng 8-16 ký tự" maxlength="16"><br>
+                        <label>Xác nhận mật khẩu</label><label id="checkconfirm"></label><br>
+                        <input type="password" id="txtpasswordcheck" placeholder="Trong khoảng 8-16 ký tự" maxlength="16"><br>
+                    </form>
+                </div>
+            </div>
+            <div id="regbottom">
+                <input type="button" onclick="createnewuser();" value="ĐĂNG KÝ">
+                <label>Bạn đã có tài khoản?</label>
+                <input type="button" onclick="closeregForm(); showLog();" value="ĐĂNG NHẬP">
+            </div>
+        </div>
+    </div>
+    <div id="logwrapper">
+        <div class="logWindow">
+            <div id="regtitle">
+                <div style="margin-left: 41%;">Đăng nhập</div>
+                <a href="javascript:closelogForm();">X</a>
+            </div>
+            <hr style="width: 90%;">
+            <div id="logbox">
+                <div id="logright">
+                    <form name="inputAccount">
+                        <label>Tên đăng nhập</label><label id="checkuser"></label><br>
+                        <input type="text" id="txtusernamelog" placeholder="Username"><br>
+                        <label>Mật khẩu</label><label id="checkpass"></label><br>
+                        <input type="password" id="txtpasswordlog" placeholder="Trong khoảng 8-16 ký tự"><br>
+                    </form>
+                </div>
+            </div>
+            <div id="logbottom">
+                <input type="button" id="login" onclick="login(); closelogForm();" value="ĐĂNG NHẬP">
+                <label>Bạn chưa có tài khoản?</label>
+                <input type="button" onclick="closelogForm(); showReg(); createAdmin();" value="ĐĂNG KÝ">
+            </div>
+        </div>
+    </div>
+    <!--Slide show-->
+    <div id="slideshow" >
+
+        <div class="slideshow-container">
+            
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="./img/img1.png" style="width:100%">
+                <div class="text">1</div>
+            </div>
+            
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="img/img2.png" style="width:100%">
+                <div class="text">2</div>
+            </div>
+            
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="img/img3.png" style="width:100%">
+                <div class="text">3</div>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            <br>
+            
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            
+        </div>
+        
+    </div>
+        <div id="clickbox">
+            <!--Inner HTML-->
+            <div class="tool" id="page">
+            <div class="menuSP">
+            <ul>
+            <a id="all"   onclick="changeCondition('all')"><li>Tất cả sản phầm</li></a>
+            <a id="caphe" onclick="changeCondition('caphe')"><li>Cà phê</li></a>
+            <a id="da_xay" onclick="changeCondition('da_xay')"><li>Đá Xay</li></a>
+            <a id="tra" onclick="changeCondition('tra')"><li>Trà</li></a>
+            </ul>
+            </div>
+            <div>
+            <ul>
+            <li>Xếp theo khoản giá</li>
+            </ul>
+            <form class="search" action="" style="
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            flex-direction: row;
+            margin-top: 2%;
+            ">
+            <input id="priceMin"  type="number" placeholder="Giá tối thiểu" style="
+            padding: 12px 20px;
+            border: none;
+            border-bottom: lightsteelblue 3px solid;
+            border-radius: 16px;
+            margin-right: 2%;
+            ">
+            <input id="priceMax"  type="number" placeholder="Giá tối đa" style="
+            padding: 12px 20px;
+            border: none;
+            border-bottom: lightsteelblue 3px solid;
+            border-radius: 16px;
+            margin-right: 2%;
+            ">
+            </form>
+            <ul>
+            <a onclick="searchForPrice()"><li>Tìm theo giá</li></a>
+        </ul>
+            </div>
+            </div>
+            <form class="search" action="" style="
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            flex-direction: row;
+            margin-top: 2%;
+            "><input id="searchProduct" onkeyup="searchForProductName()" type="text" placeholder="Search.." name="search" style="
+            padding: 12px 20px;
+            border: none;
+            border-bottom: lightsteelblue 3px solid;
+            border-radius: 16px;
+            margin-right: 2%;
+            "></form>
+            <div class="info">
+            <div class="infoCard">
+            <div>
+            <a class="icon" onclick="closeinfoCard()"> <i class="fa fa-times-circle" aria-hidden="true"></i> </a>
+            </div>
+            <div class="img_content">
+            <img class="imgInfo" src="" alt="">
+            <div class="Content">
+            </div>
+            </div>
+            <div class="ghichu">
+            <input type="text" name="txtghichu" id="ghichu" placeholder="Ghi chú thêm cho nhân viên...">
+            </div>
+            <div class="xacnhanSP">
+            </div>
+            </div>
+            </div>
+            <div id="producePage">
+            <div class="container">
+            </div>
+            <div class="page">
+            </div>
+        </div>
+    </div>
+    <!-- <button onclick="topFunction()" id="myBtn" title="go to top"><i class="fas fa-arrow-up"></i></button> -->
+
+    <!--Footer-->
+    <footer style=" overflow: auto; padding: 0% 11% 5% 13%;">
+        <!-- <hr> -->
+        <br>
+        <div class="span-2-of-6">
+            <h3>ForTea.</h3>
+            <span>Delivering the best coffee life since 1996.</span> <br>
+            <span>From coffee geeks to the real ones.</span>
+            <p>ForTea Inc, &copy; 2025</p>
+        </div>
+        <div class="span-1-of-6">
+            <h4>Menu</h4>
+            <ul>
+                <li><a href="#" onclick="changeMenu(document.getElementById('home'));">Home</a></li>
+                <li><a href="#" onclick="changeMenu(document.getElementById('clickproduct')); xuatList('all'); menuTop();">Products</a></li>
+                <li><a href="#" onclick="changeMenu(this)">About Us</a></li>
+                <li><a href="#" id="contact" onclick="changeMenu(this)">Contact</a></li>
+            </ul>
+        </div>
+        <div class="span-1-of-6 ">
+            <h4>Follow us</h4>
+            <ul>
+                <li><a href="https://www.facebook.com/">Facebook</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+                <li><a href="https://twitter.com/">Twitter</a></li>
+                <li><a href="https://www.google.com/">Google</a></li>
+            </ul>
+        </div>
+        <div class="span-2-of-6 ">
+            <h4>Contact us</h4>
+            <span>We’re Always Happy to Help</span>
+            <h3>us@TTTT.com</h3>
+        </div>
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/reg.js"></script>
+    <script src="js/regLocalStorage.js"></script>
+    <script src="js/inner.js"></script>
+</body>
+
+</html>

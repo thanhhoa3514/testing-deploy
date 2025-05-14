@@ -1,0 +1,340 @@
+.tool ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 0px;
+    list-style: none;
+    text-decoration: underline none;
+}
+
+.tool ul a {
+    margin: 1%;
+    padding: 10px 18px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 3px 0px #888888;
+    background-color: lightsteelblue;
+    /* background-color: purple; */
+    /* text-decoration: none; */
+    cursor: pointer;
+}
+
+#producePage {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    /* padding: 0 50px; */
+    /* background-image: url(../img/background-giang-sinh-tinh-te-an-tuong.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+
+.page {
+    margin-bottom: 5%;
+    
+}
+
+.page ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.page ul a {
+    background-color: rgb(0, 238, 255);
+    padding: 10px 18px;
+    border-radius: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 0px 3px 0px #888888;
+}
+
+.page ul a:hover {
+    background-color: rgb(58, 29, 226);
+}
+
+.container {
+    /* padding: 40px; */
+    /* padding-top: 60px;
+    padding-left: 5%;
+    padding-right: 5%; */
+    padding: 50px 10% 0 10%;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    /*grid-gap: 40px;*/
+    grid-template-columns: repeat(auto-fit,minmax(200px,300px));
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    /* border: 10px double rgb(209, 8, 8); */
+    /* display: none; */
+    background-image: url(../img/background-noel-giang-sinh-3.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    box-shadow: 11px 7px 15px 0px #e3e98d;
+}
+
+.container .card {
+    /*
+    width: 23%;
+    overflow: hidden;
+    max-height: 275px;
+    border-radius: 16px;
+    margin-bottom: 6%;
+    */
+    margin-bottom: 6%;
+    /* overflow: hidden; */
+    box-shadow: 11px 7px 15px 0px #49ce71;
+    border-radius: 16px;
+    width: 20%;
+    height: fit-content;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    float: left;
+    transition: transform 0.2s;
+    /* background-color: rgb(76, 16, 218); */
+    background-color: rgb(6, 134, 19);
+}
+
+.container .card .img_box {
+    /*
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 16px;
+    */
+    position: relative;
+    overflow: hidden;
+    margin: 4%;
+}
+
+
+/*
+.container .card .img_box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+    transform-origin: bottom;
+}*/
+
+.container .card .img_box .action {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    transition: 0.3s ease-in-out;
+    list-style-type: none;
+}
+
+.container .card:hover .img_box .action {
+    transform: translateY(-80px);
+}
+
+.container .card .img_box .action li {
+    /* padding:20px; */
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.container .card .img_box .action li span {
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    font-size: 15px;
+}
+
+.container .card .img_box .action li:hover span {
+    /* display: grid; */
+    display: block;
+    text-align: left;
+    width: auto;
+    background-color: rgba(255, 192, 203, 0.5);
+    /* border: 2px solid #333; */
+}
+
+.product_name h3 {
+    padding: 1px 1px 11px 13px;
+    margin-left: 1%;
+    width: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.product_price_rating {
+    width: 100%;
+    float: left;
+    border-radius: 16px;
+    padding: 1px 1px 18px 13px;
+    margin-left: 1%;
+}
+
+
+/*
+.container .card .content .product_price_rating h2 {
+    font-size: 20px;
+    color: #ff2020;
+    font-weight: 500;
+}
+*/
+
+.product_price_rating .fa {
+    color: rgb(228, 228, 9);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product_price_rating .gray {
+    color: rgb(133, 133, 119);
+    cursor: pointer;
+}
+
+.info {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0000007e;
+    display: none;
+    padding-top: 7%;
+}
+
+.infoCard {
+    position: relative;
+    width: 60%;
+    /* height: fit-content; */
+    margin: 0 auto;
+    background-color: #cac4c4;
+    border-radius: 16px;
+    /*padding: 2px 41px 0px 76px;*/
+}
+
+.info .infoCard .icon .fa-times-circle {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: rgb(172, 35, 35);
+    cursor: pointer;
+    font-size: 35px;
+    /* margin-bottom: 20px; */
+    margin-right: 37px;
+    margin-top: 29px;
+}
+
+.info .infoCard .img_content img {
+    /* position: absolute; */
+    /* top: 50px;
+    left: 50px; */
+    margin: 20px 20px;
+    width: 30%;
+    height: 30%;
+}
+
+.info .infoCard .img_content {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+}
+
+.info .infoCard .img_content .Content {
+    padding: 110px 58px 1px 1px;
+}
+
+.info .infoCard .img_content .Content h2 {
+    /* color: red; */
+    margin-bottom: 50px;
+}
+
+.info .infoCard .option div {
+    /* display: flex; */
+    display: none;
+    align-items: baseline;
+    margin-bottom: 1%;
+}
+
+.info .infoCard .option {
+    padding: 15px;
+}
+
+.info .infoCard .ghichu input[type=text] {
+    width: 90%;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    margin-left: 5%;
+    outline: none;
+}
+
+.info .infoCard .ghichu input[type=text]:focus {
+    border: 2px solid rgb(221, 11, 11);
+}
+
+.info .infoCard .xacnhanSP a {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    cursor: pointer;
+    color: white;
+    padding-bottom: 15px;
+}
+
+.info .infoCard .xacnhanSP a p {
+    font-size: 20px;
+    border-radius: 40px;
+    padding: 12px 20px;
+    background-color: orange;
+}
+
+.info .infoCard .xacnhanSP:hover a {
+    color: red;
+}
+
+.ghichu {
+    /*padding: 12px 20px;*/
+}
+
+.ghichu h4 {
+    margin-left: 5%;
+}
+
+@media only screen and (max-width: 1366px) {
+    .container .card .img_box .action li span {
+        font-size: 12px;
+    }
+    .container .card .img_box .action li {
+        font-size: 20px;
+    }
+    .info .infoCard .img_content .Content {
+        padding: 55px 58px 1px 1px;
+    }
+}

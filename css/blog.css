@@ -1,0 +1,306 @@
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+
+/* -----------blog tile------------ */
+
+.blog-tile {
+    text-transform: uppercase;
+    margin-bottom: 5%;
+    padding-left: 26%;
+    word-spacing: 5px;
+}
+
+.blog-tile::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    left: 0;
+    background-color: black;
+    height: 1.5px;
+    width: 460px;
+    margin-left: 33%;
+}
+
+
+/* ------------------------------------
+---------------feature post------------
+--------------------------------------- */
+
+.feature-tile h4 {
+    margin-top: 7%;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 7%;
+}
+
+.feature-tile h4::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    left: 0;
+    margin-left: 38%;
+    background-color: black;
+    height: 1.5px;
+    width: 6%;
+    margin-top: 1%;
+}
+
+.feature-tile h4::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    left: 0;
+    margin-left: 56%;
+    background-color: black;
+    height: 1.5px;
+    width: 6%;
+    margin-top: -0.5%;
+}
+
+div.feature-post .span-1-of-2 {
+    position: relative;
+    margin: 5%;
+    width: 40%;
+    float: left;
+}
+
+div.feature-post img,
+div.latest-post img {
+    width: 100%;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.post-picture:hover img,
+.post-picture:active img {
+    filter: brightness(80%);
+}
+
+.post-picture:hover .post-title,
+.post-picture:active .post-title {
+    top: 45%;
+    opacity: 1;
+}
+
+div.feature-post a,
+div.latest-post a {
+    cursor: pointer;
+    display: block;
+    margin: 5% 0%;
+    text-decoration: none;
+    color: #1f2833;
+    font-size: 130%;
+    transition: all .3s;
+}
+
+div.feature-post a:hover,
+div.feature-post a:active,
+div.latest-post a:hover,
+div.latest-post a:active {
+    color: chocolate;
+}
+
+.post-title {
+    position: absolute;
+    top: 50%;
+    background-color: whitesmoke;
+    width: 90%;
+    margin-left: 5%;
+    padding: 2% 0%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 90%;
+    font-weight: bold;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .3s;
+    opacity: 0;
+}
+
+div.feature-post span,
+div.latest-post span {
+    display: block;
+    font-size: 80%;
+    font-weight: bold;
+    /* color: rgb(233, 231, 130); */
+    color: rgb(55, 97, 235);
+
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+
+/* ------------------------------------------------
+----------------latest post & about us-------------
+--------------------------------------------------- */
+
+div.latest-post-and-about-us>div {
+    padding: 5%;
+    float: left;
+}
+
+div.latest-post div.post-picture {
+    position: relative;
+    margin: 5%;
+    margin-left: 0;
+    width: 50%;
+    float: left;
+}
+
+div.latest-post p {
+    font-size: 70%;
+}
+
+
+/* da phan xai` chung voi feature post :) */
+
+div.latest-post a {
+    font-size: 100%;
+    display: inline-block;
+    margin-top: 5%;
+}
+
+div.about-us p {
+    /* color: rgb(233, 231, 130); */
+    color: rgb(55, 97, 235);
+
+    text-align: justify;
+}
+
+
+/* --------blog-infomation--------- */
+
+#blog-infomation-wrapper {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+div.blog-infomation div {
+    background-color: rgb(224, 224, 224);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .3s;
+    padding: 10px;
+    box-shadow: 5px 10px 5px 1px #888888;
+    /* box-shadow: 5px 10px 5px 1px rgba(134, 134, 134, 0.671); */
+    animation: animate 0.75s 1;
+    animation-direction: normal;
+    z-index: 99;
+    display: none;
+    overflow: auto;
+    height: 75%;
+}
+
+div.blog-infomation span {
+    display: inline-block;
+    color: #1f2833;
+    padding: 0% 5%;
+    text-align: justify;
+}
+
+div.blog-infomation h3 {
+    padding: 0% 5%;
+    text-align: center;
+}
+
+div.blog-infomation h4 {
+    padding: 0% 5%;
+}
+
+div.blog-infomation i {
+    float: right;
+    font-size: 170%;
+    color: #1f2833;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+div.blog-infomation i:hover,
+div.blog-infomation i:active {
+    color: red;
+}
+
+div.blog-infomation img {
+    margin: 5% 0%;
+    margin-left: 5%;
+    width: 90%;
+    border-radius: 16px;
+    cursor: auto;
+}
+
+@keyframes animate {
+    0% {
+        top: -20%;
+        left: 50%
+    }
+    100% {
+        top: 50%;
+        left: 50%
+    }
+}
+
+
+/* ------------------------------------------
+------------------responsive-----------------
+--------------------------------------------- */
+
+@media only screen and (min-width: 1380px) {
+    .blog-tile {
+        padding-left: 35%;
+    }
+    .blog-tile::after {
+        margin-left: 39.5%;
+    }
+}
+@media only screen and (max-width: 1023px) {
+    .blog-tile {
+        padding-left: 32%;
+    }
+    .feature-tile h4::before {
+        margin-left: 33%;
+        margin-top: 0.75%;
+    }
+    .feature-tile h4::after {
+        margin-left: 60%;
+        margin-top: -1%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .blog-tile {
+        /* font-size: 125%; */
+        padding-left: 15%;
+    }
+    .blog-tile::after {
+        margin-left: 16%;
+    }
+    .feature-tile h4::before {
+        margin-left: 33%;
+        margin-top: 1.75%;
+    }
+    .feature-tile h4::after {
+        margin-left: 60%;
+        margin-top: -1.75%;
+    }
+    div.feature-post .span-1-of-2 {
+        width: 90%;
+    }
+    .latest-post-and-about-us>div {
+        width: 100%;
+    }
+}

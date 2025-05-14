@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cart</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/1f286772f7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/purchase.css">
+</head>
+
+<body>
+    <header>
+        <div onclick="document.location.href='index.html';"><img src="img/logo2.png" class="logo2"></div>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+        <!-- <div class="cart" onclick="showPurchase()">Đơn đã đặt</div> -->
+        <div class="cart"><a href="javascript:show();">Đơn đã đặt</a></div>
+    </header>
+    <div id="wrapper" >
+        <div class="Window" style="overflow: auto;"  >
+            <i class="fas fa-window-close" onclick="show()"></i>
+            <section class="contain contain-section"  >
+                <h2 class="header2">ĐƠN ĐÃ ĐẶT</h2>
+                <div class="purchase-items" style="justify-content: center;">
+                </div>
+                <div class="purchase-total">
+                </div>
+
+            </section>
+        </div>
+    </div>
+    <section class="container content-section">
+        <h2 class="section-header">GIỎ HÀNG</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items">
+
+        </div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total: </strong>
+            <span class="cart-total-price">$</span>
+        </div>
+        <button class="btn btn-primary btn-purchase"  type="button"><a href="index.html">PURCHASE</a></button>
+    </section>
+    <script src="js/cart.js"></script>
+    <script src="js/purchase.js"></script>
+</body>
+
+</html>
