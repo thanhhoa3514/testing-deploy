@@ -102,12 +102,6 @@
     margin: 0 auto;
 }
 
-/* Active navbar link */
-.active {
-    color: #007bff !important;
-    font-weight: bold;
-}
-
 /* Mobile navigation styles */
 .burger-menu {
     display: none;
