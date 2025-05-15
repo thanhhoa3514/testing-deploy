@@ -61,7 +61,7 @@ document.addEventListener('click', function(event) {
 window.addEventListener('resize', function() {
     const burgerMenu = document.querySelector('.burger-menu');
     if (burgerMenu) {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1000) {
             burgerMenu.style.display = 'block';
         } else {
             burgerMenu.style.display = 'none';
@@ -75,9 +75,17 @@ window.addEventListener('resize', function() {
 });
 
 // Initialize when page loads
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
     const burgerMenu = document.querySelector('.burger-menu');
-    if (burgerMenu && window.innerWidth <= 768) {
+    if (burgerMenu && window.innerWidth <= 1000) {
         burgerMenu.style.display = 'block';
+    } else if (burgerMenu) {
+        burgerMenu.style.display = 'none';
+    }
+    
+    // Ensure mobile menu has proper initial state
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+        mobileMenu.classList.remove('show');
     }
 });

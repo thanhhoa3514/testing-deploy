@@ -493,8 +493,18 @@ p:active {
 
 @media only screen and (max-width: 1000px) {
     #navbar {
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+    
+    #main-nav, #topright {
         display: none;
     }
+    
+    .burger-menu {
+        display: block;
+    }
+    
     #topsidebar {
         display: flex;
         width: 100%;
@@ -720,10 +730,11 @@ div.head a:hover i.fas {
 
 .burger-menu i {
     transition: color 0.3s ease;
+    font-size: 28px;
 }
 
 .burger-menu i:hover {
-    color: #9efff4;
+    color: #007bff;
 }
 
 #mobile-menu {

@@ -240,26 +240,6 @@
     <script src="js/regLocalStorage.js"></script>
     <script src="js/inner.js"></script>
     <script src="js/lab.js"></script>
-    <script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu.classList.contains('show')) {
-                mobileMenu.classList.remove('show');
-            } else {
-                mobileMenu.classList.add('show');
-            }
-        }
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const burgerIcon = document.querySelector('.burger-menu i');
-            
-            if (event.target !== burgerIcon && !mobileMenu.contains(event.target) && mobileMenu.classList.contains('show')) {
-                mobileMenu.classList.remove('show');
-            }
-        });
-    </script>
 </body>
 
 </html>
