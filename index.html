@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>The Tea Lab</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="img/logo2.png">
     <script src="https://kit.fontawesome.com/1f286772f7.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./css/product.css">
     <link rel="stylesheet" href="./css/blog.css">
     <link rel="stylesheet" href="./css/reg.css">
+    <link rel="stylesheet" href="./css/lab.css">
     <script src="js/windowOnload.js "></script>
     <script src="js/windowOnclick.js "></script>
 </head>
@@ -26,17 +27,36 @@
         <a id="logo" href="#home">
             <img src="./img/logo2.png" alt="logo" style="width: 45px; height: auto;">
         </a>
-        <nav>
+        
+        <!-- Burger menu icon for mobile -->
+        <div class="burger-menu">
+            <i class="fas fa-bars" onclick="toggleMobileMenu(event)"></i>
+        </div>
+        
+        <nav id="main-nav">
             <ul>
-                <li><a href="#" id="home" onclick="changeMenu(this);">Home</a></li>
-                <li><a href="#" id="clickproduct" onclick="changeMenu(this); xuatList('all'); menuTop();">Our Products</a></li>
-                <li><a href="#" onclick="changeMenu(document.getElementById('contact'));">Contact</a></li>
-                <li><a href="#" id="clickblog" onclick="changeMenu(this);">About Us</a></li>
+                <li><a href="#" id="home" onclick="changeMenu(this);"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" id="clickproduct" onclick="changeMenu(this); xuatList('all'); menuTop();"><i class="fas fa-mug-hot"></i> Our Products</a></li>
+                <li><a href="#" onclick="changeMenu(document.getElementById('contact'));"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#" id="clickblog" onclick="changeMenu(this);"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="lab.html" id="clicklab"><i class="fas fa-flask"></i> Lab</a></li>
             </ul>
         </nav>
         <div id="topright">
-            <a href="#" id="statusLog" onclick="showLog(); createAdmin();">Login</a>
+            <a href="#" id="statusLog" onclick="showLog(); createAdmin();"><i class="fas fa-user"></i> Login</a>
         </div>
+    </div>
+    
+    <!-- Mobile navigation menu -->
+    <div id="mobile-menu">
+        <ul>
+            <li><a href="#" onclick="changeMenu(document.getElementById('home')); toggleMobileMenu(event);"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#" onclick="changeMenu(document.getElementById('clickproduct')); xuatList('all'); menuTop(); toggleMobileMenu(event);"><i class="fas fa-mug-hot"></i> Our Products</a></li>
+            <li><a href="#" onclick="changeMenu(document.getElementById('contact')); toggleMobileMenu(event);"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="#" onclick="changeMenu(document.getElementById('clickblog')); toggleMobileMenu(event);"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="lab.html"><i class="fas fa-flask"></i> Lab</a></li>
+            <li><a href="#" onclick="showLog(); createAdmin(); toggleMobileMenu(event);"><i class="fas fa-user"></i> Login</a></li>
+        </ul>
     </div>
 
     <a id="logo" href="#" onclick="showsidebar()">
@@ -49,20 +69,23 @@
         <div id="sidebar">
             <ul>
                 <a href="#" id="logo" onclick="changeMenu(document.getElementById('home')); document.getElementById('sidebarwrapper').style.display='none';">
-                    <li>Home</li>
+                    <li><i class="fas fa-home"></i> Home</li>
                 </a>
                 <a href="#" onclick="changeMenu(document.getElementById('clickproduct')); xuatList('all'); menuTop(); document.getElementById('sidebarwrapper').style.display='none';">
-                    <li>Our Products</li>
+                    <li><i class="fas fa-mug-hot"></i> Our Products</li>
                 </a>
                 <a href="#" onclick="document.getElementById('sidebarwrapper').style.display='none';">
-                    <li>About</li>
+                    <li><i class="fas fa-info-circle"></i> About</li>
                 </a>
                 <a href="#" onclick="changeMenu(document.getElementById('clickblog')); document.getElementById('sidebarwrapper').style.display='none';">
-                    <li>About Us</li>
+                    <li><i class="fas fa-info-circle"></i> About Us</li>
+                </a>
+                <a href="lab.html" onclick="document.getElementById('sidebarwrapper').style.display='none';">
+                    <li><i class="fas fa-flask"></i> Lab</li>
                 </a>
                 <div id="barright">
                     <a href="#" onclick="showLog(); createAdmin(); document.getElementById('sidebarwrapper').style.display='none';">
-                        <li>Login</li>
+                        <li><i class="fas fa-user"></i> Login</li>
                     </a>
                 </div>
             </ul>
@@ -186,24 +209,24 @@
         <div class="span-1-of-6">
             <h4>Menu</h4>
             <ul>
-                <li><a href="#" onclick="changeMenu(document.getElementById('home'));">Home</a></li>
-                <li><a href="#" onclick="changeMenu(document.getElementById('clickproduct')); xuatList('all'); menuTop();">Products</a></li>
-                <li><a href="#" onclick="changeMenu(document.getElementById('clickblog'))">About Us</a></li>
-                <li><a href="#" id="contact" onclick="changeMenu(this)">Contact</a></li>
+                <li><a href="#" onclick="changeMenu(document.getElementById('home'));"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" onclick="changeMenu(document.getElementById('clickproduct')); xuatList('all'); menuTop();"><i class="fas fa-mug-hot"></i> Products</a></li>
+                <li><a href="#" onclick="changeMenu(document.getElementById('clickblog'))"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="#" id="contact" onclick="changeMenu(this)"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </div>
         <div class="span-1-of-6 ">
             <h4>Follow us</h4>
             <ul>
-                <li><a href="https://www.facebook.com/">Facebook</a></li>
-                <li><a href="https://www.instagram.com/">Instagram</a></li>
-                <li><a href="https://twitter.com/">Twitter</a></li>
-                <li><a href="https://www.google.com/">Google</a></li>
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i> Facebook</a></li>
+                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="https://www.google.com/"><i class="fab fa-google"></i> Google</a></li>
             </ul>
         </div>
         <div class="span-2-of-6 ">
             <h4>Contact us</h4>
-            <span>We’re Always Happy to Help</span>
+            <span>We're Always Happy to Help</span>
             <h3>us@TeaLab.com</h3>
         </div>
     </footer>
@@ -216,6 +239,27 @@
     <script src="js/reg.js"></script>
     <script src="js/regLocalStorage.js"></script>
     <script src="js/inner.js"></script>
+    <script src="js/lab.js"></script>
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('show')) {
+                mobileMenu.classList.remove('show');
+            } else {
+                mobileMenu.classList.add('show');
+            }
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const burgerIcon = document.querySelector('.burger-menu i');
+            
+            if (event.target !== burgerIcon && !mobileMenu.contains(event.target) && mobileMenu.classList.contains('show')) {
+                mobileMenu.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 
 </html>

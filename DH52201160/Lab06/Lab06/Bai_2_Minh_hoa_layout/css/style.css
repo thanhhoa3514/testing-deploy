@@ -1,0 +1,78 @@
+.wrapper {
+  display: flex;
+  /* kich hoat flex box*/
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+  /* cho táº¥t cáº£ pháº§n tá»­ bÃªn trong cÃ³ Ä‘á»™ dÃ i 100% vÃ  tá»‰ lá»‡ chiáº¿m khÃ´ng gian trá»‘ng lÃ  nhÆ° nhau*/
+}
+
+.header-flex-2 {
+  background: tomato;
+}
+
+.footer-flex-2 {
+  background: lightgreen;
+  order: 4;
+}
+
+.main {
+  text-align: left;
+  background: deepskyblue;
+  flex: 3 0px;
+  /* cho pháº§n ná»™i dung main á»Ÿ giá»¯a chiáº¿m 3 pháº§n khÃ´ng gian trá»‘ng so vá»›i 2 pháº§n aside bÃªn cáº¡nh */
+  order: 2;
+}
+
+.aside {
+  flex: 1 0 0;
+}
+
+/* 2 pháº§n aside sáº½ chá»‰ chiáº¿m 1 pháº§n khÃ´ng gian */
+.aside-1 {
+  background: gold;
+  order: 1;
+}
+
+.aside-2 {
+  background: hotpink;
+  order: 3;
+}
+
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    order: 1;
+    flex: 1 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+  .wrapper {
+    flex-direction: column;
+  }
+  .main {
+    order: 1;
+  }
+  .aside-1 {
+    order: 2;
+  }
+}

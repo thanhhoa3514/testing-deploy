@@ -1,0 +1,286 @@
+/* Lab Dropdown Styles */
+.lab-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#lab-dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    min-width: 700px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    padding: 20px;
+    left: -300px;
+    top: 40px;
+    border-radius: 5px;
+}
+
+.lab-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.lab-card {
+    width: 200px;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.lab-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.lab-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #343a40;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.lab-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.lab-links a {
+    padding: 8px 10px;
+    text-decoration: none;
+    color: #495057;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    transition: all 0.2s ease;
+}
+
+.lab-links a:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+}
+
+/* Show the dropdown menu when active */
+#lab-dropdown-content.show {
+    display: block;
+}
+
+/* Lab Page Styles */
+.lab-container {
+    width: 80%;
+    margin: 100px auto 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.lab-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.lab-container p {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #6c757d;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+}
+
+/* Active navbar link */
+.active {
+    color: #007bff !important;
+    font-weight: bold;
+}
+
+/* Mobile navigation styles */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #343a40;
+    z-index: 1001;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.burger-menu i {
+    transition: color 0.3s ease;
+}
+
+.burger-menu i:hover {
+    color: #007bff;
+}
+
+#mobile-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#mobile-menu.show {
+    max-height: 100vh;
+    overflow-y: auto;
+    display: block;
+}
+
+#mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#mobile-menu li {
+    border-bottom: 1px solid #e9ecef;
+}
+
+#mobile-menu li:last-child {
+    border-bottom: none;
+}
+
+#mobile-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: #343a40;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#mobile-menu a.active {
+    color: #007bff;
+    background-color: #f8f9fa;
+}
+
+#mobile-menu a:hover {
+    background-color: #f8f9fa;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 1200px) {
+    .lab-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .lab-container {
+        width: 90%;
+        margin-top: 90px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .lab-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .lab-container {
+        width: 90%;
+        margin-top: 90px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Show burger menu and hide regular nav */
+    .burger-menu {
+        display: block;
+    }
+    
+    #main-nav, #topright {
+        display: none;
+    }
+    
+    #navbar {
+        justify-content: flex-start;
+        padding: 10px 20px;
+    }
+    
+    #lab-dropdown-content {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        min-width: auto;
+        height: auto;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .lab-cards {
+        flex-direction: column;
+    }
+    
+    .lab-card {
+        width: 100%;
+    }
+    
+    .lab-links {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .lab-links.visible {
+        max-height: 500px;
+    }
+    
+    .lab-container {
+        width: 95%;
+        margin-top: 80px;
+        padding: 15px;
+    }
+    
+    .lab-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .lab-container {
+        margin-top: 80px;
+    }
+    
+    .lab-container h1 {
+        font-size: 24px;
+    }
+    
+    .lab-container p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .lab-card {
+        padding: 8px;
+    }
+    
+    .lab-card h3 {
+        font-size: 18px;
+    }
+    
+    .lab-links a {
+        padding: 6px 8px;
+        font-size: 14px;
+    }
+} 

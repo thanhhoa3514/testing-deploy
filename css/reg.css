@@ -33,8 +33,8 @@
     display: none;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: whitesmoke;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: 0.4s;
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -51,8 +51,8 @@
     display: none;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: whitesmoke;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: 0.4s;
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -73,7 +73,7 @@
 #regtitle a {
     text-decoration: none;
     float: right;
-    background-color: red;
+    background-color: #dc3545;
     color: white;
     text-align: center;
     padding: 3px 7px;
@@ -83,7 +83,7 @@
 }
 
 #regtitle a:hover {
-    background-color: gray;
+    background-color: #c82333;
 }
 
 #regbox {
@@ -91,14 +91,14 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    background-color: whitesmoke;
+    background-color: #fff;
 }
 
 #logbox {
     margin: 3% 0% 3% 0%;
     width: 100%;
     display: flex;
-    background-color: whitesmoke;
+    background-color: #fff;
     justify-content: center;
 }
 
@@ -123,8 +123,9 @@
     margin-bottom: 2%;
     border-radius: 5px;
     border: none;
-    border-bottom: rgb(28, 48, 107) 3px solid;
+    border-bottom: #007bff 3px solid;
     transition: width 0.2s ease-in-out;
+    background-color: #f8f9fa;
 }
 
 #regbox input[type=password] {
@@ -134,23 +135,24 @@
     margin-bottom: 2%;
     border-radius: 5px;
     border: none;
-    border-bottom: rgb(28, 48, 107) 3px solid;
+    border-bottom: #007bff 3px solid;
     transition: width 0.2s ease-in-out;
+    background-color: #f8f9fa;
 }
 
 #regbox input[type=password]:focus {
     width: 100%;
-    background-color: rgba(211, 211, 211, 0.533);
+    background-color: #e9ecef;
     border: none;
-    border-bottom: red 3px solid;
+    border-bottom: #0056b3 3px solid;
 }
 
 #regbox input[type=text]:focus,
 [type=password]:focus {
     width: 100%;
-    background-color: rgba(211, 211, 211, 0.533);
+    background-color: #e9ecef;
     border: none;
-    border-bottom: red 3px solid;
+    border-bottom: #0056b3 3px solid;
 }
 
 #logbox input[type=text],
@@ -161,22 +163,23 @@
     margin-bottom: 2%;
     border-radius: 5px;
     border: none;
-    border-bottom: rgb(28, 48, 107) 3px solid;
+    border-bottom: #007bff 3px solid;
     transition: 0.2s;
+    background-color: #f8f9fa;
 }
 
 #logbox input[type=text]:focus,
 [type=password]:focus {
-    background-color: rgba(211, 211, 211, 0.533);
+    background-color: #e9ecef;
     border: none;
-    border-bottom: red 3px solid;
+    border-bottom: #0056b3 3px solid;
 }
 
 #checkhoten,
 #checkuser,
 #checkpass,
 #checkconfirm {
-    color: red;
+    color: #dc3545;
     font-size: 15px;
 }
 
@@ -202,7 +205,8 @@
     padding: 12px 20px;
     border-radius: 16px;
     border: none;
-    background-color: burlywood;
+    background-color: #007bff;
+    color: white;
     transition: 0.3s;
     margin-left: 2%;
     margin-right: 2%;
@@ -210,14 +214,15 @@
 
 #regbottom input[type=button]:hover {
     color: white;
-    background-color: black;
+    background-color: #0056b3;
 }
 
 #logbottom input[type=button] {
     padding: 12px 20px;
     border-radius: 16px;
     border: none;
-    background-color: burlywood;
+    background-color: #007bff;
+    color: white;
     transition: 0.3s;
     margin-left: 2%;
     margin-right: 2%;
@@ -225,7 +230,7 @@
 
 #logbottom input[type=button]:hover {
     color: white;
-    background-color: black;
+    background-color: #0056b3;
 }
 
 @-webkit-keyframes animatetop {
@@ -293,5 +298,50 @@
 @media only screen and (max-height: 700px) {
     #regwrapper {
         padding-top: 6.5%;
+    }
+}
+
+/* Add responsive styles for registration and login forms */
+@media only screen and (max-width: 768px) {
+    .regWindow, .logWindow {
+        width: 90% !important;
+        max-width: 500px;
+    }
+    
+    #regbox {
+        flex-direction: column;
+    }
+    
+    #regleft, #regright {
+        width: 100% !important;
+        padding: 10px;
+    }
+    
+    #regbottom, #logbottom {
+        flex-direction: column;
+    }
+    
+    #regbottom input, #logbottom input {
+        margin: 5px 0;
+    }
+    
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #regtitle {
+        font-size: 16px;
+    }
+    
+    #regtitle div {
+        margin-left: 35% !important;
+    }
+    
+    label {
+        font-size: 14px;
     }
 }
